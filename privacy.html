@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CareKeys — Privacy Policy · 隐私政策 · プライバシー</title>
+<meta name="description" content="CareKeys collects nothing. Keys live in your device Keychain; family sync is end-to-end encrypted via iCloud CloudKit. No accounts, no servers, no trackers.">
+<style>
+  :root { color-scheme: light; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, "PingFang SC", "Hiragino Sans", "Microsoft JhengHei", "Microsoft YaHei", sans-serif;
+         background: #FBF6F1; color: #26333F; line-height: 1.85; padding: 52px 20px 80px; }
+  .wrap { max-width: 780px; margin: 0 auto; }
+  h1 { font-size: 30px; margin-bottom: 6px; }
+  .sub { color: #8A7A6A; margin-bottom: 30px; font-size: 15px; }
+  h2 { font-size: 19px; margin: 30px 0 10px; color: #E0762A; }
+  p, li { color: #3C4A56; font-size: 15px; }
+  ul { padding-left: 22px; margin: 8px 0; }
+  .card { background: #FFFFFF; border: 1px solid #EDE3D8; border-radius: 14px; padding: 22px 26px; margin-top: 14px; }
+  .langbar { display: flex; gap: 8px; margin-bottom: 28px; flex-wrap: wrap; }
+  .langbar button { background: #FFFFFF; color: #6B5D4F; border: 1px solid #E3D6C8; border-radius: 20px;
+                    padding: 7px 18px; cursor: pointer; font-size: 14px; font-weight: 600; }
+  .langbar button.on { background: #E0762A; color: #FFFFFF; border-color: #E0762A; }
+  section[data-lang] { display: none; }
+  section[data-lang].show { display: block; }
+  a { color: #E0762A; }
+  footer { margin-top: 56px; color: #A4907C; font-size: 13px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>CareKeys</h1>
+  <p class="sub">Privacy Policy · 隐私政策 · プライバシーポリシー · 隱私權政策</p>
+
+  <div class="langbar">
+    <button id="b-en" class="on" onclick="sw('en')">English</button>
+    <button id="b-zhhans" onclick="sw('zhhans')">简体中文</button>
+    <button id="b-zhhant" onclick="sw('zhhant')">繁體中文</button>
+    <button id="b-ja" onclick="sw('ja')">日本語</button>
+  </div>
+
+  <!-- English -->
+  <section data-lang="en" class="show">
+    <div class="card">
+      <p><strong>Effective: 2026-10-20 · App version 1.0</strong><br>
+      CareKeys is a family caregiving tool: a family member (the Guardian) sets up "keys" — credentials for websites — for an aging parent, and the parent opens those sites with a single tap. CareKeys is built data-minimalist by design.</p>
+    </div>
+    <div class="card">
+      <h2>1. We collect nothing</h2>
+      <ul>
+        <li>No name, email, phone number, ID, location, contacts, photos, health data, or advertising identifier</li>
+        <li>No third-party analytics, statistics, advertising, or tracking SDKs</li>
+        <li>No accounts — there is no sign-up, no login, no user system</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h2>2. Where your data lives</h2>
+      <ul>
+        <li><strong>Keys (credentials)</strong>: stored only in the iOS Keychain on the device, protected by hardware-level encryption. They are never transmitted to or stored on any developer server.</li>
+        <li><strong>Cards (title, icon, note, website)</strong>: stored on the device. Family sync sends them as AES-GCM encrypted payloads through Apple's iCloud CloudKit infrastructure, under a family code only your family knows. Neither the developer nor Apple can read the contents.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h2>3. How data leaves the device</h2>
+      <p>There is exactly one channel: encrypted family sync over iCloud CloudKit, activated only when you turn on Family Sync. It never passes through any server operated by the developer. You can turn it off at any time in iOS Settings → Apple ID → iCloud.</p>
+    </div>
+    <div class="card">
+      <h2>4. Clipboard</h2>
+      <p>Tapping a tile copies the credential to the system clipboard so you can paste it into the target app or website — this is the core function of the app. CareKeys never reads the clipboard in the background and never sends clipboard contents anywhere.</p>
+    </div>
+    <div class="card">
+      <h2>5. Children &amp; older adults</h2>
+      <p>CareKeys is designed for families, including older users. It is not marketed to children under 13 and collects no age information.</p>
+    </div>
+    <div class="card">
+      <h2>6. Deleting your data</h2>
+      <ul>
+        <li>Deleting the app removes all data on that device (Keychain entries are removed with the app)</li>
+        <li>Synced family data can be removed by changing the family code, or by deleting the app's iCloud data</li>
+        <li>For any request, contact: <strong>support@carekeysapp.com</strong></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 简体中文 -->
+  <section data-lang="zhhans">
+    <div class="card">
+      <p><strong>生效日期:2026-10-20 · App 版本 1.0</strong><br>
+      CareKeys 是一款家庭数字照顾工具:家人(照顾者)为长辈远程配置常用站点的"钥匙"(凭据),长辈一键复制并打开对应站点。我们以"数据最小化"为设计底线。</p>
+    </div>
+    <div class="card">
+      <h2>1. 我们不收集任何数据</h2>
+      <ul>
+        <li>不收集姓名、邮箱、电话、证件、位置、通讯录、照片、健康数据、广告标识符</li>
+        <li>不嵌入任何第三方分析、统计、广告、追踪 SDK</li>
+        <li>不设账号——没有注册、登录、用户体系</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h2>2. 数据存在哪里</h2>
+      <ul>
+        <li><strong>凭据(钥匙)</strong>:仅存储在设备本地的 iOS Keychain 中(硬件级加密),从不传输或存储到开发者的任何服务器。</li>
+        <li><strong>卡片(标题、图标、备注、网址)</strong>:仅存储在设备本地。家庭同步以 AES-GCM 加密负载、经苹果 iCloud CloudKit 基础设施传递,由只有你家庭知道的家庭码保护。开发者与苹果均无法读取内容。</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h2>3. 数据如何离开你的设备</h2>
+      <p>只有一条通道:开启家庭同步时,经 iCloud CloudKit 的加密家庭同步。数据从不经过开发者运营的任何服务器。可随时在 iOS 设置 → Apple ID → iCloud 中关闭。</p>
+    </div>
+    <div class="card">
+      <h2>4. 剪贴板</h2>
+      <p>点击磁贴会把凭据写入系统剪贴板,方便你粘贴到目标应用/网站——这是本应用的核心功能。CareKeys 不在后台读取剪贴板,也不会把剪贴板内容发送到任何位置。</p>
+    </div>
+    <div class="card">
+      <h2>5. 儿童与老年人</h2>
+      <p>CareKeys 为家庭场景设计(含老年用户),不面向 13 岁以下儿童营销,不收集任何年龄信息。</p>
+    </div>
+    <div class="card">
+      <h2>6. 数据删除</h2>
+      <ul>
+        <li>删除应用即删除该设备上的全部数据(Keychain 条目随应用卸载清除)</li>
+        <li>家庭同步数据可通过更换家庭码或删除应用的 iCloud 数据清除</li>
+        <li>任何请求请联系:<strong>support@carekeysapp.com</strong></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 繁體中文 -->
+  <section data-lang="zhhant">
+    <div class="card">
+      <p><strong>生效日期:2026-10-20 · App 版本 1.0</strong><br>
+      CareKeys 是一款家庭數位照顧工具:家人(照顧者)為長輩遠端設定常用網站的「鑰匙」(憑證),長輩一鍵複製並開啟對應網站。我們以「資料最小化」為設計底線。</p>
+    </div>
+    <div class="card">
+      <h2>1. 我們不收集任何資料</h2>
+      <ul>
+        <li>不收集姓名、電子郵件、電話、證件、位置、聯絡人、照片、健康資料、廣告識別碼</li>
+        <li>不嵌入任何第三方分析、統計、廣告、追蹤 SDK</li>
+        <li>不設帳號——沒有註冊、登入、會員系統</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h2>2. 資料存在哪裡</h2>
+      <ul>
+        <li><strong>憑證(鑰匙)</strong>:僅儲存在裝置本機的 iOS Keychain 中(硬體級加密),絕不傳輸或儲存到開發者的任何伺服器。</li>
+        <li><strong>卡片(標題、圖示、備註、網址)</strong>:僅儲存在裝置本機。家庭同步以 AES-GCM 加密承載、經蘋果 iCloud CloudKit 基礎設施傳遞,由只有你家庭知道的家庭碼保護。開發者與蘋果均無法讀取內容。</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h2>3. 資料如何離開你的裝置</h2>
+      <p>只有一條通道:開啟家庭同步時,經 iCloud CloudKit 的加密家庭同步。資料絕不經過開發者營運的任何伺服器。可隨時在 iOS 設定 → Apple ID → iCloud 中關閉。</p>
+    </div>
+    <div class="card">
+      <h2>4. 剪貼簿</h2>
+      <p>點擊磁磚會把憑證寫入系統剪貼簿,方便你貼到目標 App/網站——這是本 App 的核心功能。CareKeys 不在背景讀取剪貼簿,也不會把剪貼簿內容傳送到任何位置。</p>
+    </div>
+    <div class="card">
+      <h2>5. 兒童與老年人</h2>
+      <p>CareKeys 為家庭場景設計(含老年使用者),不向 13 歲以下兒童行銷,不收集任何年齡資訊。</p>
+    </div>
+    <div class="card">
+      <h2>6. 資料刪除</h2>
+      <ul>
+        <li>刪除 App 即刪除該裝置上的全部資料(Keychain 項目隨 App 解除安裝清除)</li>
+        <li>家庭同步資料可透過更換家庭碼或刪除 App 的 iCloud 資料清除</li>
+        <li>任何請求請聯絡:<strong>support@carekeysapp.com</strong></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 日本語 -->
+  <section data-lang="ja">
+    <div class="card">
+      <p><strong>発効日:2026-10-20 · アプリバージョン 1.0</strong><br>
+      CareKeys は家庭向けケアツールです。家族(Guardian)がご高齢のご家族のために、よく使うサイトの「キー」(資格情報)をリモートで設定し、ご本人はワンタップでコピーしてサイトを開けます。設計の根幹は「データ最小化」です。</p>
+    </div>
+    <div class="card">
+      <h2>1. 当社は一切データを収集しません</h2>
+      <ul>
+        <li>氏名・メールアドレス・電話番号・身分証・位置情報・連絡先・写真・ヘルスケアデータ・広告識別子は収集しません</li>
+        <li>サードパーティの分析・統計・広告・トラッキング SDK は一切組み込んでいません</li>
+        <li>アカウント登録・ログイン・ユーザー体系はありません</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h2>2. データの保存場所</h2>
+      <ul>
+        <li><strong>キー(資格情報)</strong>:端末内の iOS Keychain のみに保存されます(ハードウェアレベルの暗号化)。開発者のサーバーへ送信・保存されることは一切ありません。</li>
+        <li><strong>カード(タイトル・アイコン・メモ・URL)</strong>:端末内にのみ保存されます。ファミリーシンクは AES-GCM で暗号化したペイロードを、Apple の iCloud CloudKit インフラ経由でのみ受け渡し、家族だけが知るファミリーコードで保護されます。開発者にも Apple にも内容は読めません。</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h2>3. データが端末の外に出る経路</h2>
+      <p>経路はひとつだけ:ファミリーシンクを有効にした際の iCloud CloudKit 経由の暗号化同期です。開発者が運用するサーバーは一切経由しません。iOS の設定 → Apple ID → iCloud からいつでもオフにできます。</p>
+    </div>
+    <div class="card">
+      <h2>4. クリップボード</h2>
+      <p>タイルをタップすると資格情報がシステムのクリップボードにコピーされ、対象アプリ/サイトに貼り付けできます。これは本アプリの中核機能です。CareKeys はバックグラウンドでクリップボードを読み取らず、内容をどこかへ送信することもありません。</p>
+    </div>
+    <div class="card">
+      <h2>5. 子どもと高齢者について</h2>
+      <p>CareKeys は(高齢ユーザーを含む)高齢ユーザーを含む家庭のために設計されておりであり、13 歳未満の子どもへマーケティングせず、年齢情報も収集しません。</p>
+    </div>
+    <div class="card">
+      <h2>6. データの削除</h2>
+      <ul>
+        <li>アプリを削除すると端末内の全データが削除されます(Keychain 項目はアンインストール時に消去)</li>
+        <li>同期データはファミリーコードの変更、またはアプリの iCloud データ削除で消去できます</li>
+        <li>ご連絡:<strong>support@carekeysapp.com</strong></li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>CareKeys · <a href="index.html">← Home</a> · Effective 2026-10-20</footer>
+</div>
+<script>
+function sw(l){
+  document.querySelectorAll('section[data-lang]').forEach(s=>s.classList.toggle('show', s.dataset.lang===l));
+  document.querySelectorAll('.langbar button').forEach(b=>b.classList.toggle('on', b.id==='b-'+l));
+}
+</script>
+</body>
+</html>
