@@ -5,14 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CareKeys — Keys for Parents</title>
 <meta name="description" content="CareKeys is a family caregiving tool: adult children set up website keys remotely; aging parents just tap one large tile. No typing, no passwords on screen.">
+<meta property="og:title" content="CareKeys — Keys for Parents">
+<meta property="og:description" content="You configure remotely. Your parent taps one big button.">
+<meta property="og:image" content="assets/zh_01_elder.png">
 <style>
   :root { color-scheme: light; }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { font-family: -apple-system, "PingFang SC", "Hiragino Sans", "Microsoft YaHei", sans-serif;
          background: #FBF6F1; color: #26333F; line-height: 1.75; }
-  .wrap { max-width: 1020px; margin: 0 auto; padding: 0 22px; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 22px; }
 
-  nav { display: flex; align-items: center; gap: 14px; padding: 20px 0; }
+  nav { display: flex; align-items: center; gap: 14px; padding: 20px 0; flex-wrap: wrap; }
   .logo { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 19px; }
   .logo svg { display: block; }
   .spacer { flex: 1; }
@@ -22,33 +25,32 @@
   .langbar button.on { background: #D9781F; color: #FFF8F0; border-color: #D9781F; font-weight: 600; }
   .navlink { font-size: 14px; color: #26333F; text-decoration: none; border-bottom: 1px solid #E3D9CC; padding-bottom: 2px; }
 
-  .hero { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 44px; align-items: center; padding: 52px 0 40px; }
+  .hero { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 44px; align-items: center; padding: 44px 0 36px; }
   h1 { font-size: 42px; line-height: 1.22; letter-spacing: -0.5px; margin-bottom: 18px; }
   h1 .accent { color: #D9781F; }
   .sub { font-size: 18px; color: #55636F; margin-bottom: 26px; }
   .cta { display: flex; gap: 12px; flex-wrap: wrap; }
-  .btn { display: inline-block; padding: 13px 26px; border-radius: 14px; font-size: 16px; font-weight: 600;
-         text-decoration: none; }
+  .btn { display: inline-block; padding: 13px 26px; border-radius: 14px; font-size: 16px; font-weight: 600; text-decoration: none; }
   .btn.primary { background: #D9781F; color: #FFF8F0; box-shadow: 0 6px 18px rgba(217,120,31,.28); }
   .btn.ghost { background: transparent; color: #26333F; border: 1.5px solid #D8CCBC; }
 
-  /* CSS phone mock — designed tile visual, no raw screenshots */
-  .phone { width: 280px; height: 480px; margin: 0 auto; background: #FAF7F0; border: 10px solid #26333F;
-           border-radius: 42px; padding: 34px 16px 16px; box-shadow: 0 24px 60px rgba(38,51,63,.16); position: relative; }
-  .phone::before { content: ""; position: absolute; top: 12px; left: 50%; transform: translateX(-50%);
-           width: 86px; height: 22px; background: #26333F; border-radius: 12px; }
-  .phone h3 { font-size: 22px; text-align: center; margin: 4px 0 14px; color: #26333F; }
-  .tiles { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-  .tile { border-radius: 20px; aspect-ratio: 1/1.06; display: flex; flex-direction: column; align-items: center;
-          justify-content: center; gap: 6px; color: #FFF; font-weight: 700; font-size: 15px; text-align: center;
-          box-shadow: 0 6px 14px rgba(38,51,63,.12); }
-  .tile .ic { font-size: 34px; line-height: 1; }
-  .t1 { background: #29A0B5; } .t2 { background: #338C66; } .t3 { background: #D9781F; } .t4 { background: #D95561; }
-  .phone .hint { text-align: center; font-size: 12px; color: #8A949D; margin-top: 14px; }
+  /* real product shots */
+  .shot { display: block; width: 100%; height: auto; border-radius: 26px;
+          border: 1px solid #E8DDCE; box-shadow: 0 24px 60px rgba(38,51,63,.18); }
+  .hero-shot { max-width: 400px; margin: 0 auto; }
 
-  section { padding: 46px 0; }
+  section { padding: 44px 0; }
   .kicker { font-size: 13px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #D9781F; margin-bottom: 8px; }
   h2 { font-size: 28px; margin-bottom: 26px; letter-spacing: -0.3px; }
+
+  /* gallery: three feature shots */
+  .gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+  .gcard { background: #FFF; border: 1px solid #EFE6D9; border-radius: 22px; padding: 18px 18px 22px; }
+  .gcard img { border-radius: 16px; border: 1px solid #EFE6D9; width: 100%; height: auto; }
+  .gcard h3 { font-size: 17px; margin: 14px 4px 6px; }
+  .gcard p { font-size: 14px; color: #55636F; margin: 0 4px; }
+
+  /* steps */
   .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
   .step { background: #FFF; border: 1px solid #EFE6D9; border-radius: 18px; padding: 24px 22px; }
   .step .n { width: 34px; height: 34px; border-radius: 50%; background: #FBEADD; color: #D9781F; font-weight: 700;
@@ -80,13 +82,13 @@
 
   section[data-lang], .hl[data-lang] { display: none; }
   section[data-lang].show, .hl[data-lang].show { display: block; }
-  .hero-copy.show { display: block; }
 
-  @media (max-width: 860px) {
-    .hero { grid-template-columns: 1fr; padding-top: 30px; }
-    .phone { width: 250px; height: 435px; }
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; padding-top: 26px; }
     h1 { font-size: 32px; }
+    .hero-shot { max-width: 320px; }
     .steps, .roles { grid-template-columns: 1fr; }
+    .gallery { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
   }
 </style>
 </head>
@@ -151,22 +153,9 @@
         </div>
       </div>
     </div>
-
-    <div class="phone">
-      <h3 class="hl" data-lang="en">CareKeys</h3>
-      <h3 class="hl" data-lang="ja">CareKeys</h3>
-      <h3 class="hl" data-lang="zh-Hans">CareKeys</h3>
-      <h3 class="hl" data-lang="zh-Hant">CareKeys</h3>
-      <div class="tiles">
-        <div class="tile t1"><span class="ic">🏥</span><span class="hl" data-lang="en">Hospital</span><span class="hl" data-lang="ja">病院</span><span class="hl" data-lang="zh-Hans">医院挂号</span><span class="hl" data-lang="zh-Hant">醫院掛號</span></div>
-        <div class="tile t2"><span class="ic">🏦</span><span class="hl" data-lang="en">Pension</span><span class="hl" data-lang="ja">年金</span><span class="hl" data-lang="zh-Hans">养老金</span><span class="hl" data-lang="zh-Hant">退休金</span></div>
-        <div class="tile t3"><span class="ic">💊</span><span class="hl" data-lang="en">Pharmacy</span><span class="hl" data-lang="ja">薬局</span><span class="hl" data-lang="zh-Hans">药房</span><span class="hl" data-lang="zh-Hant">藥局</span></div>
-        <div class="tile t4"><span class="ic">✉️</span><span class="hl" data-lang="en">Mail</span><span class="hl" data-lang="ja">メール</span><span class="hl" data-lang="zh-Hans">邮箱</span><span class="hl" data-lang="zh-Hant">信箱</span></div>
-      </div>
-      <p class="hint hl" data-lang="en">One tap: key copied, site opens</p>
-      <p class="hint hl" data-lang="ja">ワンタップ:鍵をコピーしてサイトを開く</p>
-      <p class="hint hl" data-lang="zh-Hans">一键:凭据已复制,网站已打开</p>
-      <p class="hint hl" data-lang="zh-Hant">一鍵:憑證已複製,網站已開啟</p>
+    <div class="hero-shot">
+      <img class="shot" src="assets/zh_01_elder.png" alt="CareKeys elder home screen — large tiles"
+           srcset="assets/zh_01_elder.png 1x">
     </div>
   </div>
 
@@ -176,8 +165,8 @@
     <h2>Three steps. Zero typing for your parent.</h2>
     <div class="steps">
       <div class="step"><div class="n">1</div><h3>You add keys remotely</h3><p>Hospital portal, pension site, pharmacy account — add them from your own phone, in the Guardian screen.</p></div>
-      <div class="step"><div class="n">2</div><h3>They sync privately</h3><p>Everything travels through your family's own iCloud private database (CloudKit), end-to-end under your Apple ID. We have no servers.</p></div>
-      <div class="step"><div class="n">3</div><h3>Parent taps one tile</h3><p>The key is copied and the website opens. No forms, no typing, no settings — the credential never appears on screen.</p></div>
+      <div class="step"><div class="n">2</div><h3>They sync privately</h3><p>Everything travels as encrypted payloads through iCloud CloudKit under your family code. We have no servers.</p></div>
+      <div class="step"><div class="n">3</div><h3>Parent taps one tile</h3><p>The key is copied and the website opens. No forms, no typing — the credential never appears on screen.</p></div>
     </div>
   </section>
   <section class="hl" data-lang="ja">
@@ -185,8 +174,8 @@
     <h2>3ステップ。ご両親が入力することは何もありません。</h2>
     <div class="steps">
       <div class="step"><div class="n">1</div><h3>あなたが遠隔で鍵を追加</h3><p>病院ポータル・年金サイト・薬局アカウントを、あなたのスマホの Guardian 画面から追加します。</p></div>
-      <div class="step"><div class="n">2</div><h3>プライベートに同期</h3><p>すべてご家族専用の iCloud プライベートデータベース(CloudKit)経由。Apple ID 名下でエンドツーエンド。開発元サーバーはありません。</p></div>
-      <div class="step"><div class="n">3</div><h3>親はタイルを1タップ</h3><p>鍵がコピーされ、サイトが開きます。フォーム・入力・設定は一切なし。認証情報が画面に表示されることもありません。</p></div>
+      <div class="step"><div class="n">2</div><h3>プライベートに同期</h3><p>すべてファミリーコードで保護され、暗号化されて iCloud CloudKit 経由で受け渡されます。開発元サーバーはありません。</p></div>
+      <div class="step"><div class="n">3</div><h3>親はタイルを1タップ</h3><p>鍵がコピーされ、サイトが開きます。フォーム・入力は一切なし。認証情報が画面に表示されることもありません。</p></div>
     </div>
   </section>
   <section class="hl" data-lang="zh-Hans">
@@ -194,8 +183,8 @@
     <h2>三步完成。长辈全程零打字。</h2>
     <div class="steps">
       <div class="step"><div class="n">1</div><h3>你远程添加钥匙</h3><p>医院挂号、养老金、药房账号——在你自己手机的「家人端」添加。</p></div>
-      <div class="step"><div class="n">2</div><h3>经家庭私有通道同步</h3><p>数据经你家专属 iCloud 私有数据库(CloudKit)传递,端到端限于你的 Apple ID。我们没有服务器。</p></div>
-      <div class="step"><div class="n">3</div><h3>长辈点一张磁贴</h3><p>凭据自动复制、网站自动打开。没有表单、没有输入、没有设置——凭据永不上屏。</p></div>
+      <div class="step"><div class="n">2</div><h3>经家庭私有通道同步</h3><p>数据以家庭码保护、加密后经 iCloud CloudKit 传递。我们没有服务器。</p></div>
+      <div class="step"><div class="n">3</div><h3>长辈点一张磁贴</h3><p>凭据自动复制、网站自动打开。没有表单、没有输入——凭据永不上屏。</p></div>
     </div>
   </section>
   <section class="hl" data-lang="zh-Hant">
@@ -203,106 +192,46 @@
     <h2>三步完成。長輩全程零打字。</h2>
     <div class="steps">
       <div class="step"><div class="n">1</div><h3>你遠端加入鑰匙</h3><p>醫院掛號、退休金、藥局帳號——在你自己手機的「家人端」加入。</p></div>
-      <div class="step"><div class="n">2</div><h3>經家庭私有通道同步</h3><p>資料經你家專屬 iCloud 私有資料庫(CloudKit)傳遞,端對端限於你的 Apple ID。我們沒有伺服器。</p></div>
-      <div class="step"><div class="n">3</div><h3>長輩點一張磁貼</h3><p>憑證自動複製、網站自動開啟。沒有表單、沒有輸入、沒有設定——憑證永不上屏。</p></div>
+      <div class="step"><div class="n">2</div><h3>經家庭私有通道同步</h3><p>資料以家庭碼保護、加密後經 iCloud CloudKit 傳遞。我們沒有伺服器。</p></div>
+      <div class="step"><div class="n">3</div><h3>長輩點一張磁貼</h3><p>憑證自動複製、網站自動開啟。沒有表單、沒有輸入——憑證永不上屏。</p></div>
     </div>
   </section>
 
-  <!-- ================= TWO SCREENS ================= -->
+  <!-- ================= GALLERY: REAL SCREENS ================= -->
   <section class="hl" data-lang="en">
-    <div class="kicker">Two apps in one</div>
-    <h2>One screen for your parent. One for you.</h2>
-    <div class="roles">
-      <div class="role elder">
-        <h3>For your parent — Elder screen</h3>
-        <ul>
-          <li>Large, high-contrast tiles — nothing to learn</li>
-          <li>One tap: key copied, site opened</li>
-          <li>Credentials never appear on screen</li>
-          <li>The word "password" never appears at all</li>
-        </ul>
-      </div>
-      <div class="role guardian">
-        <h3>For you — Guardian screen</h3>
-        <ul>
-          <li>Full remote setup: add, edit, remove</li>
-          <li>Changes sync to your parent automatically</li>
-          <li>Family code pairing — no accounts</li>
-          <li>Local-first: keys live in the device Keychain</li>
-        </ul>
-      </div>
+    <div class="kicker">See it</div>
+    <h2>Two screens, one job.</h2>
+    <div class="gallery">
+      <div class="gcard"><img loading="lazy" src="assets/en_01_elder.png" alt="Elder home: large tiles"><h3>What your parent sees</h3><p>Large, high-contrast tiles. Nothing to learn — the word “password” never appears.</p></div>
+      <div class="gcard"><img loading="lazy" src="assets/en_02_autocopy.png" alt="One tap opens the site"><h3>One tap, done</h3><p>The key is copied and the site opens in Safari. Two actions, one tap.</p></div>
+      <div class="gcard"><img loading="lazy" src="assets/en_03_guardian.png" alt="Guardian remote setup"><h3>What you see</h3><p>Full remote setup from your own phone. Changes sync to your parent automatically.</p></div>
     </div>
   </section>
   <section class="hl" data-lang="ja">
-    <div class="kicker">ひとつのアプリ、ふたつの画面</div>
-    <h2>ご両親用の画面と、あなた用の画面。</h2>
-    <div class="roles">
-      <div class="role elder">
-        <h3>ご両親用 — Elder 画面</h3>
-        <ul>
-          <li>大きな高コントラストタイル — 覚えることゼロ</li>
-          <li>ワンタップ:鍵をコピーしてサイトを開く</li>
-          <li>認証情報は画面に表示されません</li>
-          <li>「パスワード」という言葉自体が出てきません</li>
-        </ul>
-      </div>
-      <div class="role guardian">
-        <h3>あなた用 — Guardian 画面</h3>
-        <ul>
-          <li>完全リモート設定:追加・編集・削除</li>
-          <li>変更はご両親の端末へ自動同期</li>
-          <li>ファミリーコードでペアリング — アカウント不要</li>
-          <li>ローカルファースト:鍵は端末のキーチェーンに保存</li>
-        </ul>
-      </div>
+    <div class="kicker">スクリーン紹介</div>
+    <h2>ふたつの画面、ひとつの仕事。</h2>
+    <div class="gallery">
+      <div class="gcard"><img loading="lazy" src="assets/en_01_elder.png" alt="Elder home: large tiles"><h3>ご両親に見えるもの</h3><p>大きな高コントラストタイル。覚えることゼロ — 「パスワード」という言葉自体が出ません。</p></div>
+      <div class="gcard"><img loading="lazy" src="assets/en_02_autocopy.png" alt="One tap opens the site"><h3>ワンタップで完了</h3><p>鍵がコピーされ、Safari でサイトが開きます。2つの動作が1タップに。</p></div>
+      <div class="gcard"><img loading="lazy" src="assets/en_03_guardian.png" alt="Guardian remote setup"><h3>あなたに見えるもの</h3><p>自分のスマホから完全リモート設定。変更はご両親の端末へ自動同期。</p></div>
     </div>
   </section>
   <section class="hl" data-lang="zh-Hans">
-    <div class="kicker">一个 app,两块屏幕</div>
-    <h2>长辈一块屏,你一块屏。</h2>
-    <div class="roles">
-      <div class="role elder">
-        <h3>给长辈 —— 长辈端</h3>
-        <ul>
-          <li>大字号高对比磁贴——零学习成本</li>
-          <li>一次点按:凭据复制、网站打开</li>
-          <li>凭据永不上屏</li>
-          <li>「密码」二字从头到尾不出现</li>
-        </ul>
-      </div>
-      <div class="role guardian">
-        <h3>给你 —— 家人端</h3>
-        <ul>
-          <li>完全远程配置:增、改、删</li>
-          <li>变更自动同步到长辈手机</li>
-          <li>家庭码配对——无账号体系</li>
-          <li>本地优先:钥匙存于设备钥匙串</li>
-        </ul>
-      </div>
+    <div class="kicker">实拍</div>
+    <h2>两块屏幕,一件事。</h2>
+    <div class="gallery">
+      <div class="gcard"><img loading="lazy" src="assets/zh_01_elder.png" alt="长辈端大磁贴首页"><h3>长辈看到的</h3><p>大字号高对比磁贴,零学习成本——「密码」二字从头到尾不出现。</p></div>
+      <div class="gcard"><img loading="lazy" src="assets/zh_02_autocopy.png" alt="一键进入网站"><h3>一键,完成</h3><p>凭据已复制、网站已在 Safari 打开。两个动作,一次点按。</p></div>
+      <div class="gcard"><img loading="lazy" src="assets/zh_03_guardian.png" alt="子女端远程配置"><h3>你看到的</h3><p>在自己手机上完全远程配置,变更自动同步到长辈手机。</p></div>
     </div>
   </section>
   <section class="hl" data-lang="zh-Hant">
-    <div class="kicker">一個 app,兩塊螢幕</div>
-    <h2>長輩一塊屏,你一塊屏。</h2>
-    <div class="roles">
-      <div class="role elder">
-        <h3>給長輩 —— 長輩端</h3>
-        <ul>
-          <li>大字級高對比磁貼——零學習成本</li>
-          <li>一次點按:憑證複製、網站開啟</li>
-          <li>憑證永不上屏</li>
-          <li>「密碼」二字從頭到尾不出現</li>
-        </ul>
-      </div>
-      <div class="role guardian">
-        <h3>給你 —— 家人端</h3>
-        <ul>
-          <li>完全遠端設定:增、改、刪</li>
-          <li>變更自動同步到長輩手機</li>
-          <li>家庭碼配對——無帳號體系</li>
-          <li>本地優先:鑰匙存於裝置鑰匙圈</li>
-        </ul>
-      </div>
+    <div class="kicker">實拍</div>
+    <h2>兩塊螢幕,一件事。</h2>
+    <div class="gallery">
+      <div class="gcard"><img loading="lazy" src="assets/zh_01_elder.png" alt="長輩端大磁貼首頁"><h3>長輩看到的</h3><p>大字級高對比磁貼,零學習成本——「密碼」二字從頭到尾不出現。</p></div>
+      <div class="gcard"><img loading="lazy" src="assets/zh_02_autocopy.png" alt="一鍵開啟網站"><h3>一鍵,完成</h3><p>憑證已複製、網站已在 Safari 開啟。兩個動作,一次點按。</p></div>
+      <div class="gcard"><img loading="lazy" src="assets/zh_03_guardian.png" alt="子女端遠端設定"><h3>你看到的</h3><p>在自己手機上完全遠端設定,變更自動同步到長輩手機。</p></div>
     </div>
   </section>
 
@@ -354,7 +283,7 @@
     <a href="privacy.html" class="hl" data-lang="ja">プライバシーポリシー</a>
     <a href="privacy.html" class="hl" data-lang="zh-Hans">隐私政策</a>
     <a href="privacy.html" class="hl" data-lang="zh-Hant">隱私權政策</a>
-    <span>support@carekeysapp.com</span>
+    <span>phinn@outlook.com</span>
   </footer>
 </div>
 
@@ -369,7 +298,6 @@ function sw(l){
   document.documentElement.lang = l;
 }
 (function(){
-  var langs = ['en','ja','zh-Hans','zh-Hant'];
   var nav = (navigator.language || 'en').toLowerCase();
   var pick = 'en';
   if (nav.indexOf('zh') === 0) {
