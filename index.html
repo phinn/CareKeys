@@ -7,7 +7,11 @@
 <meta name="description" content="CareKeys is a family caregiving tool: adult children set up website keys remotely; aging parents just tap one large tile. No typing, no passwords on screen.">
 <meta property="og:title" content="CareKeys — Keys for Parents">
 <meta property="og:description" content="You configure remotely. Your parent taps one big button.">
-<meta property="og:image" content="assets/zh_01_elder.png">
+<meta property="og:image" content="img/og-card.png">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="img/og-card.png">
 <style>
   :root { color-scheme: light; }
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -154,8 +158,8 @@
       </div>
     </div>
     <div class="hero-shot">
-      <img class="shot" src="assets/zh_01_elder.png" alt="CareKeys elder home screen — large tiles"
-           srcset="assets/zh_01_elder.png 1x">
+      <img class="shot" id="heroShot" src="assets/en_01_elder.png" alt="CareKeys elder home screen — large tiles"
+           srcset="assets/en_01_elder.png 1x">
     </div>
   </div>
 
@@ -296,6 +300,8 @@ function sw(l){
     b.classList.toggle('on', b.id === 'b-' + l);
   });
   document.documentElement.lang = l;
+  var hs = document.getElementById('heroShot');
+  if (hs) { hs.src = 'assets/' + (l === 'zh-Hans' || l === 'zh-Hant' ? 'zh' : 'en') + '_01_elder.png'; }
 }
 (function(){
   var nav = (navigator.language || 'en').toLowerCase();
